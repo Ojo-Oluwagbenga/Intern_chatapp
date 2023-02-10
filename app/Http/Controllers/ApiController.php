@@ -178,8 +178,8 @@ class ApiController extends Controller{
                 "poster"=>"kk",
             ]
         ];
-        $ret =[' Post::dataSort($test)'];
-        return (json_encode($ret));      
+        $ret = 'Ready to fly';
+        return $ret;      
     }
     public function pagetest(Request $request){
         return view('test');      
