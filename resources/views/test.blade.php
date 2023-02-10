@@ -135,7 +135,7 @@
         $(".init3").click(function(){   
             data = {
                 'post_code' : "v78Q",
-                'parent_address' : "VYz4aC",
+                'parent_address' : "VYz4ae",
                 'author_code' : "author_code",
                 'text' : "Lorem4",
             }        
@@ -159,7 +159,7 @@
             data = {
                 'post_code' : "v78Q",
                 'node_address' : "base",
-                'max_count':3,
+                // 'max_count':3,
                 // 'max_layer_depth':1
             }        
             axios({

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('author_code')->default();
             $table->text('body');
             $table->text('image');
-            $table->text('created');
             $table->integer('direct_comment_count')->default(0);
 
         });

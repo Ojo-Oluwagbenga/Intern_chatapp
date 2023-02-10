@@ -731,8 +731,7 @@ class Post{
             $addr = "base|".($ins_index);
             ModelPost::where("post_code", $post_code)->update(['direct_comment_count'=>$ins_index]);
         }else{            
-            $par_addr = Util::Decode($par_addr, strlen($par_addr), 'multi');
-            
+
             $ins_index = ModelComment::where(
                     [["post_code", $post_code], ["address", $par_addr]]
                 )->get(['direct_comment_count'])[0]["direct_comment_count"];
@@ -770,7 +769,7 @@ class Post{
         $ret = [
             'response' => 'passed',
             'data' => [
-                'address' => Util::Encode($addr, strlen($addr), 'multi')
+                'address' => $addr
             ],
         ];
         return json_encode($ret);
@@ -799,9 +798,6 @@ class Post{
         $post_code = ($data['post_code']); 
         $node_addr = ($data['node_address']); 
 
-        if ($node_addr != "base"){
-            $node_addr = Util::Decode($node_addr, strlen($node_addr), "multi");
-        }
 
         $comment = '';
         if (isset($data['max_count'])){
