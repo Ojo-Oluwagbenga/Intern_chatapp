@@ -12,7 +12,7 @@ class AddHeaders
     {
         $response = $next($request);
         $response->header('Access-Control-Allow-Origin', '*');
-        $response->header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Content-Type, Authorization, X-CSRF-TOKEN, Cache-Control, Pragma');
+        $response->header('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type, Authorization, X-CSRF-TOKEN, Cache-Control, Pragma');
         $response->header('Access-Control-Allow-Methods', '*');
         // $response->header("Content-Type", "application/json");
         //$response->header('another header', 'another value');

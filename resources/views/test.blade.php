@@ -119,7 +119,6 @@
                 method: 'POST',
                 url: 'https://intern-chatapp.vercel.app/apis/post/addcomment',
                 headers: {
-                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
                     "X-CSRF-TOKEN" : '{{csrf_token()}}'
