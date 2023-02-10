@@ -1,7 +1,7 @@
 API DOCS AND IMPLEMENTATION
 
 
-Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
+Always use the request_token in the header's BEARER-TOKEN for all POST request.
 
 <Request Token>
     axios({
@@ -26,7 +26,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/create",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             name:"val"
@@ -51,7 +54,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/validate",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             email:"email"
@@ -67,7 +73,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/fetch",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             fetchset:['name', 'email' ...]
@@ -88,7 +97,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/update",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             updset:{
@@ -108,7 +120,7 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
 </User Update>
 
 
-
+ 
 <Post Create>
 
     data = {
@@ -121,7 +133,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/create",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:data
         ...
@@ -141,7 +156,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/update",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             updset:{
@@ -166,7 +184,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/fetchpost",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             fetchset:['name', 'email' ...]
@@ -188,7 +209,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/fetchposts",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             max_count:10,
@@ -203,7 +227,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/delete",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             querypair:[
@@ -238,7 +265,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/addcomment",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:data
         ...
@@ -247,7 +277,7 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
     {
         "status":"200",
         "data":{
-            "user":"v78Q"
+            "address":"base|0|3"
         }
     }
 </Comment Create>
@@ -258,7 +288,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/fetchcomments",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             post_code:post_code,
@@ -278,7 +311,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/post/deletecomment",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+            "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             address:comment_address
