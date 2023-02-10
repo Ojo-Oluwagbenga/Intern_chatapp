@@ -117,8 +117,9 @@
             }        
             axios({
                 method: 'POST',
-                url: './apis/post/addcomment',
+                url: 'https://intern-chatapp.vercel.app/apis/post/addcomment',
                 headers: {
+                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
                     "X-CSRF-TOKEN" : '{{csrf_token()}}'
