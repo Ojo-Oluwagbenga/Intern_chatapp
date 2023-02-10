@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', 'ApiController@pagetest');
 
 
-Route::get('/', 'ApiController@minitest'); 
+Route::get('/', 'ApiController@minitest');
 // Route::get('/test', 'ApiController@test');
 //All Apis
 
