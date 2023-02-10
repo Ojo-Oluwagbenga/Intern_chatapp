@@ -178,7 +178,7 @@ class ApiController extends Controller{
                 "poster"=>"kk",
             ]
         ];
-        $ret = Post::dataSort($test);
+        $ret =[' Post::dataSort($test)'];
         return (json_encode($ret));      
     }
     public function pagetest(Request $request){
