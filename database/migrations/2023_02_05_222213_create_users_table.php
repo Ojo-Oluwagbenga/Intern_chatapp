@@ -15,19 +15,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('code');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('gender')->default();
-            $table->string('role')->default('');
-            $table->integer('cashbalance')->default(0);
-            $table->mediumText('likedproducts'); // ['stringlist of product id']
-            
-            //medium Text dont have default values;
-            //Seems this guy is damn important too lol
             $table->timestamps();
+            
+            $table->string('code')->default('NC/2022/013');
+            $table->string('email')->unique();
+            $table->string('name')->default();
+            $table->string('password')->default('');
         });
+
     }
 
     /**
