@@ -77,7 +77,7 @@
         //             headers: {
         //                 'Cache-Control': 'no-cache',
         //                 'Pragma': 'no-cache',
-        //                 "X-CSRF-TOKEN" : '{{csrf_token()}}'
+        //                 "BEARER-TOKEN" : '{{csrf_token()}}'
         //             },        
         //             data:fd            
         //     }).then(response => {
@@ -99,7 +99,7 @@
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : '{{csrf_token()}}'
                 },     
                 data:data            
             }).then(response => {
@@ -117,7 +117,7 @@
             }        
             axios({
                 method: 'POST',
-                url: './apis/post/addcomment',
+                url: 'https://intern-chatapp.vercel.app/apis/post/addcomment',
                 headers: {
                     'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
@@ -143,7 +143,7 @@
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : '{{csrf_token()}}'
                 },     
                 data:data            
             }).then(response => {
@@ -165,7 +165,7 @@
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : '{{csrf_token()}}'
                 },     
                 data:data            
             }).then(response => {
@@ -182,7 +182,7 @@
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : '{{csrf_token()}}'
                 },     
                 data:{
                     max_count: 2,
@@ -205,7 +205,7 @@
                 //     headers: {
                 //         'Cache-Control': 'no-cache',
                 //         'Pragma': 'no-cache',
-                //         "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                //         "BEARER-TOKEN" : '{{csrf_token()}}'
                 //     },     
                 //     data:{
                 //         querypair:[

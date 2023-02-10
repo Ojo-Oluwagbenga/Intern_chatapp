@@ -19,22 +19,21 @@ class ApiController extends Controller{
         ];
        
         try{           
-            $response = ($managedclasses[ucfirst($class_name)])->$func_name($request);
-            return $response;
             
-            // $tokenfromclient = $request->header('X-CSRF-TOKEN', 'default');
-                // $tokenfromserver = csrf_token();
-                
-                // if ($tokenfromclient === $tokenfromclient){                              
-                    
-                // }else{
-                //     $ret = [
-                //         'status' => '201',
-                //         'reason' => 'Invalid Token',
-                //         'data' => 'No err',
-                //     ];
-                //     return json_encode($ret);
-            // }
+            $tokenfromclient = $request->header('BEARER-TOKEN', 'default');
+            
+            if ($tokenfromclient === "intern@omegatechnologies"){                              
+                $response = ($managedclasses[ucfirst($class_name)])->$func_name($request);
+                return $response;
+            
+            }else{
+                $ret = [
+                    'status' => '201',
+                    'reason' => 'Invalid Token',
+                    'data' => 'No err',
+                ];
+                return json_encode($ret);
+            }
 
 
         } catch (\Throwable $th) {
