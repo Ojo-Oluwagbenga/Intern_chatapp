@@ -109,39 +109,138 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
 
 
 
-<Product Create>
+<Post Create>
 
-    let f_data = new FormData();
-
-    //save image in f_data in the format below
-    //Where i is the insert number of the fileObject -- starts from 1
-    form_data["file-" + i] = fileObject;
-    
-    
     data = {
-        'name' : "product_name",
-        'price' : product_name,
-        'description' : "product_description",
-        'type' : "type",    // Can be "Dyed", "Natural_Dyed", "Undyed" etc... 
-        'category' : "category", //Can be "Shoe", "Bag", "Shirt" etc...
+        'title' : "post_title",
+        'author_code' : "poster_code",
+        'body' : "post_texts",
     }
-
-    //Insert the product bio as described in data above as "createset"
-    fd.append('createset', JSON.stringify(data));
-
-
-    //count is the total number of images
-    fd.append('number_of_images', count);
-
-    
     axios({
         ...
-        url: ".../apis/product/create",
+        url: ".../apis/post/create",
         method: 'POST',
         headers: {
             "X-CSRF-TOKEN" : request_token
         },
-        data:f_data
+        data:data
+        ...
+    ))
+    Example Success
+    {
+        "status":"200",
+        "data":{
+            "post_code":"v78Q"
+        }
+    }
+</Post Create>
+
+<Post Update>
+    axios({
+        ...
+        url: ".../apis/post/update",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            updset:{
+                'title':"New Title", 
+                'text' "New Text",
+                ...
+            }
+            querypair:[
+                [column_name, column_value],
+                ["post_code", "code"],
+                ["author_code", "loguser"]
+                ...
+            ]
+        }
+        ...
+    ))
+</Post Update>
+
+<Post Fetch>
+    axios({
+        ...
+        url: ".../apis/post/fetchpost",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            fetchset:['name', 'email' ...]
+            querypair:[
+                [column_name, column_value],
+                ["size", "14"],
+                ["price", "<1000"]
+                ...
+            ]
+        }
+        ...
+    ))
+</Post Fetch>
+
+<Posts Fetch>
+    //Returns the most recent posts
+    axios({
+        ...
+        url: ".../apis/post/fetchposts",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            max_count:10,
+        }
+        ...
+    ))
+</Posts Fetch>
+
+<Post Delete>
+    axios({
+        ...
+        url: ".../apis/post/delete",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            querypair:[
+                [column_name, column_value],
+                ["post_code", "code"],
+                ["author_code", "loguser"]
+                ...
+            ]
+        }
+        ...
+    ))
+    Example Success
+    {
+        'response' : 'deleted',
+        'data' : {
+            'deleted_post_code' : "vQdj"
+        },
+    };
+</Post Delete>
+
+
+<Comment Create>
+
+    data = {
+        'post_code' : "post_code",
+        'parent_address' : "parent_address",
+        'author_code' : "author_code",
+        'text' : "Lorem4",
+    }
+    axios({
+        ...
+        url: ".../apis/post/addcomment",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:data
         ...
     ))
     Example Success
@@ -151,4 +250,47 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
             "user":"v78Q"
         }
     }
-</Product Create>
+</Comment Create>
+
+<Comment Fetch>
+    axios({
+        ...
+        url: ".../apis/post/fetchcomments",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            post_code:post_code,
+            branch_address:"start_address",
+            max_count:"max_count",(Optional maximum number of reply comments to fetch)
+            max_layer_depth:"max_layer_depth",(Optional maximum number of replies layer to reach from the branch address)
+        }
+        ...
+    ))
+</Comment Fetch>
+
+
+<Comment Delete>
+
+    axios({
+        ...
+        url: ".../apis/post/deletecomment",
+        method: 'POST',
+        headers: {
+            "X-CSRF-TOKEN" : request_token
+        },
+        data:{
+            address:comment_address
+            post_code:post_code
+        }
+        ...
+    ))
+    Example Success
+    {
+        "response":"deleted",
+        "data":{
+            "deleted_comment_addr":"v78Q"
+        }
+    }
+</Comment Delete>
