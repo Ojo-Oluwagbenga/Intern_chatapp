@@ -95,11 +95,12 @@
             }         
             axios({
                 method: 'POST',
-                url: './apis/post/create',
+                url: 'https://intern-chatapp.vercel.app/apis/post/create',
                 headers: {
+                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "BEARER-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
                 },     
                 data:data            
             }).then(response => {
@@ -122,6 +123,7 @@
                     'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
                 },     
                 data:data            
             }).then(response => {
@@ -139,11 +141,12 @@
             }        
             axios({
                 method: 'POST',
-                url: './apis/post/addcomment',
+                url: 'https://intern-chatapp.vercel.app/apis/post/addcomment',
                 headers: {
+                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "BEARER-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
                 },     
                 data:data            
             }).then(response => {
@@ -161,11 +164,12 @@
             }        
             axios({
                 method: 'POST',
-                url: './apis/post/fetchnodecomments',
+                url: 'https://intern-chatapp.vercel.app/apis/post/fetchnodecomments',
                 headers: {
+                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "BEARER-TOKEN" : '{{csrf_token()}}'
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
                 },     
                 data:data            
             }).then(response => {
