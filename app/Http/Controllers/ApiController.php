@@ -19,21 +19,22 @@ class ApiController extends Controller{
         ];
        
         try{           
+            $response = ($managedclasses[ucfirst($class_name)])->$func_name($request);
+            return $response;
             
-            $tokenfromclient = $request->header('X-CSRF-TOKEN', 'default');
-            $tokenfromserver = csrf_token();
-            
-            if ($tokenfromclient === $tokenfromserver){                              
-                $response = ($managedclasses[ucfirst($class_name)])->$func_name($request);
-                return $response;
-            }else{
-                $ret = [
-                    'status' => '201',
-                    'reason' => 'Invalid Token',
-                    'data' => 'No err',
-                ];
-                return json_encode($ret);
-            }
+            // $tokenfromclient = $request->header('X-CSRF-TOKEN', 'default');
+                // $tokenfromserver = csrf_token();
+                
+                // if ($tokenfromclient === $tokenfromclient){                              
+                    
+                // }else{
+                //     $ret = [
+                //         'status' => '201',
+                //         'reason' => 'Invalid Token',
+                //         'data' => 'No err',
+                //     ];
+                //     return json_encode($ret);
+            // }
 
 
         } catch (\Throwable $th) {
@@ -74,6 +75,7 @@ class ApiController extends Controller{
         ];
         return json_encode($ret);      
     } 
+    
     public function minitest(Request $request){
         // $post = new ModelPost;
             // $ret = [

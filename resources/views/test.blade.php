@@ -117,11 +117,11 @@
             }        
             axios({
                 method: 'POST',
-                url: 'https://intern-chatapp.vercel.app/apis/post/addcomment',
+                url: './apis/post/addcomment',
                 headers: {
+                    'Access-Control-Allow-Origin':"*",
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
                 },     
                 data:data            
             }).then(response => {
@@ -218,7 +218,7 @@
             //     .catch(error => console.error(error))
             axios({
                     method: 'GET',
-                    url: 'https://intern-chatapp.vercel.app',
+                    url: 'https://intern-chatapp.vercel.app/fetchtoken/alabi@auth.tuchdelta',
                          
                     data:{
                         querypair:[
