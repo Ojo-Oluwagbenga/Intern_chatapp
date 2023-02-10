@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Post as ModelPost;
 use App\Models\User as ModelUser;
 use App\Models\Comment as ModelComment;
 use Illuminate\Support\Facades\DB;
-
 
 class ApiController extends Controller{
     public function manager(Request $request, $class_name, $func_name){

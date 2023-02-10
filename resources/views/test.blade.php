@@ -199,23 +199,42 @@
 
         $(".init6").click(function(){   
       
+            // axios({
+                //     method: 'POST',
+                //     url: './apis/post/deletepost',
+                //     headers: {
+                //         'Cache-Control': 'no-cache',
+                //         'Pragma': 'no-cache',
+                //         "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                //     },     
+                //     data:{
+                //         querypair:[
+                //             ['post_code', 'v78Q']
+                //         ]
+                //     }          
+                // }).then(response => {
+                //     console.log(response);
+                // })
+            //     .catch(error => console.error(error))
             axios({
-                method: 'POST',
-                url: './apis/post/deletepost',
-                headers: {
-                    'Cache-Control': 'no-cache',
-                    'Pragma': 'no-cache',
-                    "X-CSRF-TOKEN" : '{{csrf_token()}}'
-                },     
-                data:{
-                    querypair:[
-                        ['post_code', 'v78Q']
-                    ]
-                }          
-            }).then(response => {
-                console.log(response);
-            })
-                .catch(error => console.error(error))
+                    method: 'GET',
+                    url: 'https://intern-chatapp.vercel.app',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache',
+                        "X-CSRF-TOKEN" : '{{csrf_token()}}'
+                    },     
+                    data:{
+                        querypair:[
+                            ['post_code', 'v78Q']
+                        ]
+                    }          
+                }).then(response => {
+                    console.log(response);
+                })
+            .catch(error => console.error(error))
+                    
+
         })
 
         
