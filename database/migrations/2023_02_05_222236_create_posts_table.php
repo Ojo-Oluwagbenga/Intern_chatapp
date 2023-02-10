@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('title')->default();
             $table->string('post_code')->default();
             $table->string('author_code')->default();
-            $table->text('body')->default();
-            $table->text('image')->default();
-            $table->text('created')->default();
-            $table->integer('direct_comment_count')->default(-1);
+            $table->text('body');
+            $table->text('image');
+            $table->text('created');
+            $table->integer('direct_comment_count')->default(0);
 
         });
     }

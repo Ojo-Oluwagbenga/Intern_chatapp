@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('post_code')->default();
             $table->string('author_code')->default();
             $table->string('address')->default();
-            $table->text('created')->default();
+            $table->string('created')->default();
             $table->integer('layer_index')->default(0); 
             $table->integer('direct_comment_count')->default(0); 
         });
