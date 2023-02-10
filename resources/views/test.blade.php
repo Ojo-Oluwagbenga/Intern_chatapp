@@ -219,11 +219,7 @@
             axios({
                     method: 'GET',
                     url: 'https://intern-chatapp.vercel.app',
-                    headers: {
-                        'Cache-Control': 'no-cache',
-                        'Pragma': 'no-cache',
-                        "X-CSRF-TOKEN" : '{{csrf_token()}}'
-                    },     
+                         
                     data:{
                         querypair:[
                             ['post_code', 'v78Q']
